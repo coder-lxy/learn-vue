@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>Title</title>
+        <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+    </head>
+    <body>
+        <div id="app">
+            <h2 :style="[baseStyle,baseStyle1]">{{message}}</h2>
+        </div>
+        <script>
+        new Vue({
+            el:"#app",
+            data:{
+                message:'你好啊!',
+                baseStyle:{color:'red',backgroundColor:'blue'},
+                baseStyle1:{fontSize:'50px'}
+            }
+        })
+        </script>
+    </body>
+</html>
+
+

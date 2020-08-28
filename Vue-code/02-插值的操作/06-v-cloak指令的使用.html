@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+    <style type="text/css">
+        [v-cloak] {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        {{message}}
+    </div>
+    <script>
+        setTimeout(function () {
+            new Vue({
+                el: "#app",
+                data: {
+                    message: '你好啊'
+                }
+            })
+
+        }, 1000)
+
+    </script>
+</body>
+
+</html>

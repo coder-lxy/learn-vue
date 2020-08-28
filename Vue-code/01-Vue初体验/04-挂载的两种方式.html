@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+</head>
+<body>
+  <!-- 1. 通过 el:"css选择器"进行配置(常用) -->
+  <div id="app">
+    {{message}}
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello Vue!"
+      }
+    })
+  </script>
+  <!-- 2. vue实例.$mount("css选择器") 进行配置 -->
+  <script>
+    var vm = new Vue({
+      data: {
+        message: "Hello"
+      }
+    })
+    vm.$mount("#app")
+  </script>
+</body>
+</html>

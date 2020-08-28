@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>Title</title>
+        <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+        <style>
+            .active {
+                color:red;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="app">
+            <ul>
+                <li v-for="(item,index) in anime" @click="liclick(index)" :class="{active:currentIndex===index}">{{item}}</li>
+            </ul>
+            
+        </div>
+        <script>
+        new Vue({
+            el:"#app",
+            data:{
+                anime:['你的名字','四月是你的谎言','夏目友人帐','魔道祖师','千与千寻'],
+                currentIndex:0
+            },
+            methods:{
+                liclick(index){
+                    this.currentIndex=index
+                }
+            }
+        })
+        </script>
+    </body>
+</html>
+
+

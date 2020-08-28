@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <!-- <cpn v-bind:num1="num" :message1="message"></cpn> -->
+        <cpn></cpn>
+    </div>
+
+    <template id="cpn">
+        <div>
+            <p>{{num1}}</p>
+            <h2>{{message1}}</h2>
+        </div>
+    </template>
+    <script>
+        // 父传子：props
+        const cpn = {
+            template: '#cpn',
+
+            // 写法一：数组写法
+            // props: ['num1','message1'],
+
+            // 写法二：对象写法 
+            props: {
+                // 1.类型限制
+                num1: Array,
+                message1: String,
+
+                // 2.提供一些默认值
+                message1: {
+                    type: String,
+                    default: 'aaa'
+                }
+            }
+        }
+        //Vue相当于父组件
+        new Vue({
+            el: "#app",
+            data: {
+                message: 'hello,vue!',
+                num: ['1', '2', '3', '4']
+            },
+            components: {
+                cpn
+            }
+
+        })
+    </script>
+</body>
+
+</html>

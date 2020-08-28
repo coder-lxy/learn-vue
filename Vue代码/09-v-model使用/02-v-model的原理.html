@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <title>Title</title>
+        <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+    </head>
+    <body>
+        <div id="app">
+            <!-- v-model 其实是一个语法糖，它的本质包含两个操作：1.v-bind绑定一个value属性 2.v-on指令给当前元素绑定input事件 -->
+            <!-- <input type="text" v-model="message"> -->
+
+            <!-- 如果不使用v-model,实现双向数据绑定方式如下： -->
+            <!-- <input type="text" :value="message" @input="valueChange"> -->
+
+            <!-- 如果不使用方法，可简化以上代码 -->
+            <input type="text" :value="message" @input="message=$event.target.value">
+            {{message}}
+        </div>
+        <script>
+        new Vue({
+            el:"#app",
+            data:{
+                message:'你好啊!'
+            },
+            // methods:{
+            //     valueChange(event) {
+            //         this.message = event.target.value;
+            //     }
+            // }
+
+        })
+        </script>
+    </body>
+</html>
+
+

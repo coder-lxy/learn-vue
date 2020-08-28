@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- 1. v-bind:属性名 -->
+    <a :href="url">{{text}}</a>
+
+    <!-- 2. v-on:事件名 -->
+    <button v-on:click="alert()">按钮</button>
+
+    <!-- 3.v-if -->
+    <div v-if="arr.length===0">数组为空</div>
+
+    <!-- 4. v-show -->
+    <div v-show="arr.length===0">空数组</div>
+
+    <!-- 5. v-for -->
+    <ul>
+      <li v-for="item in arr1">{{item}}</li>
+    </ul>
+    <!-- 6. v-bind:key -->
+    <ul>
+      <li v-for="(item,index) in arr1" :key="index">{{index}} : {{item}}</li>
+    </ul>
+    <!-- 7. v-model 双向绑定 -->
+    链接地址：<input type="text" v-model="url">
+    文本：<input type="text" v-model="text">
+    <!-- v-model 相当于同时绑定了value属性 注册了inout事件   -->
+    <input type="text" :value="text" @input="text=$event.target.value">
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello Vue!",
+        url:"http://www.baidu.com",
+        text:"百度一下",
+        arr:[],
+        arr1:[1,2,3,4]
+      }
+    })
+  </script>
+</body>
+</html>

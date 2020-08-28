@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+</head>
+<body>
+  <div id="app">
+     <!-- 1. 在挂载的内部直接书写 -->
+    <h2>{{message}}</h2>
+  </div>
+  <script>
+    var vm = new Vue({
+      el:"#app",
+      data: {
+        message: "Hello 1"
+      },
+      // 2. 在template配置中书写
+      template:"<h2>Hello 2</h2>",
+      // 3. 在render配置中用函数创建
+      render(createElement) {
+        return createElement("h2", "Hello 3")
+      }
+    })
+  </script>
+</body>
+</html>

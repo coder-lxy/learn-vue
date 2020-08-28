@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var obj = {
+      name: "lxy",
+      age: 18
+    }
+    console.log(`姓名：${obj.name} 年龄：${obj.age}`);
+    var obj = {
+      a: 1,
+      b: 2
+    }
+    console.log(`${obj}`);
+    var arr = [1, 2, 3]
+    console.log(`${arr}`);
+
+    var fn1 = function () {
+      console.log(111);
+    }
+    var fn2 = function () {
+      return '222'
+    }
+    console.log(`${fn1}`); // 111
+    console.log(`${fn1()}`); // undefined
+    console.log(`${fn2()}`); // 222
+  </script>
+</body>
+
+</html>

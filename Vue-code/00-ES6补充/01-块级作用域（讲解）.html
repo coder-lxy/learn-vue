@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>Title</title>
+        <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+    </head>
+    <body>
+        <button>按钮1</button>
+        <button>按钮2</button>
+        <button>按钮3</button>
+        <button>按钮4</button>
+        <button>按钮5</button>
+       
+        <script>
+            //ES5的var是没有块级作用域的（if/for）
+            //ES6中的let是有块级作用域的（if/for）
+            //ES5之前因为if和for都没有块级作用域的概念，所以在很多时候，我们都必须借助于function的作用域来解决应用外面变量的问题。
+            // var btns = document.getElementsByTagName('button')
+            // for (var i = 0; i < btns.length; i++) {
+            //     (function (num) {
+            //         btns[i].addEventListener('click', function () {
+            //             console.log('第' + num + '个按钮被点击');
+            //         })
+            //     })(i)
+            // }
+            const btns = document.getElementsByTagName('button')
+            for(let i = 0; i < btns.length; i++){
+                btns[i].addEventListener('click', function () {
+                    console.log('第' + i + '个按钮被点击');
+                })
+            }
+        
+        </script>
+    </body>
+</html>
+
+

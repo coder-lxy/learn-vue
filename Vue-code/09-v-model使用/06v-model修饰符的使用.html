@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <!-- 1.修饰符：lazy：在文本框不聚焦的时候渲染 -->
+        <div>
+            <input type="text" v-model.lazy="message">
+            <h2>{{message}}</h2>
+        </div>
+
+        <!-- 2.修饰符：number：转化为数字类型 -->
+        <div>
+            <input type="number" v-model.number="age">
+            <h2>类型： {{typeof age}}</h2>
+        </div>
+
+        <!-- 3.修饰符：trim 去除空格 -->
+        <div>
+            <input type="text" v-model.trim="message">
+            <h2>{{message}}</h2>
+        </div>
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                message: 'hello,vue!',
+                age: 0
+            }
+        })
+    </script>
+</body>
+
+</html>

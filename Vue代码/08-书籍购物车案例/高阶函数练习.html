@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 需求1:取出小于100的数
+        const nums = [10, 20, 111, 222, 333, 30, 40];
+        let newNums = nums.filter(function (n) {
+            return n < 100;
+        })
+        console.log(newNums);
+
+        // 需求2：取出数组newNums中各数的2倍
+        let new2Nums = newNums.map(function (n) {
+            return n * 2;
+        })
+        console.log(new2Nums);
+
+        // 需求3：求数组new2Nums中各数的和
+        let new3Nums = new2Nums.reduce(function (preValue, n) {
+            return preValue + n;
+        }, 0)
+        console.log(new3Nums);
+
+        // 以上需求汇总写法
+        let total = nums.filter(function (n) {
+            return n < 100;
+        }).map(function (n) {
+            return n * 2;
+        }).reduce(function (preValue, n) {
+            return preValue + n
+        }, 0)
+        console.log(total);
+
+        // es6箭头函数写法
+        let total2 = nums.filter(n => n < 100).map(n => n * 2).reduce((pre, n) => pre + n);
+        console.log(total2);
+    </script>
+</body>
+
+</html>

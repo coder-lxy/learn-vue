@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <title>Title</title>
+        <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+
+    </head>
+    <body>
+        <script>
+            //1.属性的增强写法
+            const name = 'leah';
+            const age = '18';
+
+            //ES5的写法
+            // const obj = {
+            //     name: name,
+            //     age: age
+            // }
+
+            //ES6的写法
+            const obj ={
+                name,
+                age
+            }
+            console.log(obj);
+
+
+            //2.函数的增强写法
+            //ES5的写法
+            // const obj = {
+            //     run: function () {
+
+            //     },
+            //     eat: function () {
+
+            //     }
+            // }
+            
+            //ES6的写法
+            const obj = {
+                run() {
+
+                },
+                eat() {
+                    
+                }
+            }
+        </script>
+    </body>
+</html>
+
+
